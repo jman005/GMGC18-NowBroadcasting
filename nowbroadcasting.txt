@@ -1,0 +1,7 @@
+"nowbroadcasting"
+{
+	"base"		"base"
+	"title"		"Now Broadcasting"
+	"menusystem"	"1"
+
+}
