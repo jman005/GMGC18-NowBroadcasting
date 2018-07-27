@@ -22,7 +22,7 @@ function CreateMenuDerma()
 		local cmdl = ClientsideModel(mdl,RENDERGROUP_OPAQUE)
 		--Gets the bounds of a model then multiples it by a 'magic number' that usually results in a good enough camera position.,
 		prop:SetCamPos(Vector(cmdl:GetModelBounds().x * -1.3285,cmdl:GetModelBounds().x * -2.8571, cmdl:GetModelBounds().x * -2.8571))
-		prop:SetLookAt(Vector(0,0,0))
+		prop:SetLookAt(Vector(0,0,10))
 		print(cmdl:GetModelBounds())
 		prop:SetModel(mdl)
 		
@@ -37,8 +37,9 @@ function CreateMenuDerma()
 		end
 	end
 		
-	CreatePropPanel("models/props_borealis/bluebarrel001.mdl")
-	CreatePropPanel("models/food/hotdog.mdl")
+	for _, p in pairs(props) do
+		CreatePropPanel(p.model)
+	end
 	hook.Add("VGUIMousePressed", "PropMenuMouseClick", OnPPClick)
 	
 end
